@@ -1,0 +1,35 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+// to get the bit of the specific position
+int getBit(int num , int pos){
+
+return (num & (1<<pos) !=0 ); 
+   
+}
+
+//to set the position of the bit to 'high(1)'
+int setBit(int num, int pos){
+ return  (num |(1<<pos));
+}
+
+//to set the position of the bit to 'low(0)'
+int clearBit (int num , int pos)
+{
+    return (num &(~(1<<pos)));
+}
+
+//to the update the bit of the specified position
+int updateBit(int num, int pos, int up){
+    num = (num&(~(1<<pos)));
+    return (num|(up<<pos));
+}
+int main(){
+    int num, pos, up;
+    cin>>num>>pos>>up;
+  cout<<getBit(num, pos)<<endl;
+//  cout<<setBit(num,pos);
+// cout<<updateBit(num, pos,up);
+return 0;
+}
